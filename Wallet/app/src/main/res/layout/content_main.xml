@@ -19,27 +19,27 @@
         <Button
             android:id="@+id/addAccount"
             android:layout_width="match_parent"
-            android:layout_height="90dp"
+            android:layout_height="110dp"
             android:text="@string/addaccount" />
         <Button
             android:id="@+id/addRecord"
             android:layout_width="match_parent"
-            android:layout_height="90dp"
+            android:layout_height="110dp"
             android:text="@string/addrecord" />
         <Button
             android:id="@+id/dashboard"
             android:layout_width="match_parent"
-            android:layout_height="90dp"
+            android:layout_height="110dp"
             android:text="@string/dashboard" />
         <Button
             android:id="@+id/record"
             android:layout_width="match_parent"
-            android:layout_height="90dp"
+            android:layout_height="110dp"
             android:text="@string/record" />
         <Button
             android:id="@+id/chart"
             android:layout_width="match_parent"
-            android:layout_height="90dp"
+            android:layout_height="110dp"
             android:text="@string/chart" />
 
     </LinearLayout>

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.menu.AddRecord$PlaceholderFragment">
+    tools:context=".view.menu.Tab2Expense">
 
     <LinearLayout
         android:layout_width="match_parent"

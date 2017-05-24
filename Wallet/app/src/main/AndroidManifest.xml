@@ -28,13 +28,13 @@
 
         <activity
             android:name=".view.menu.AddRecord"
-            android:label="Make record"
-            android:parentActivityName=".view.activity.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="Wallet"
+            android:parentActivityName=".view.activity.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.activity.MainActivity" />
         </activity>
+
 
         <activity
             android:name=".view.menu.Dashboard"
@@ -61,6 +61,24 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.activity.MainActivity" />
+        </activity>
+
+        <activity
+            android:name=".view.menu.Tab1Income"
+            android:label="Income"
+            android:parentActivityName=".view.menu.AddRecord">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.menu.AddRecord" />
+        </activity>
+
+        <activity
+            android:name=".view.menu.Tab2Expense"
+            android:label="Expense"
+            android:parentActivityName=".view.menu.AddRecord">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.menu.AddRecord" />
         </activity>
 
         <activity android:name=".view.activity.SplashActivity"><intent-filter>
