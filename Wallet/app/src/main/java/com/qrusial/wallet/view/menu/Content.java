@@ -29,14 +29,6 @@ public class Content extends Fragment {
 
         View _view = inflater.inflate(R.layout.content_main, container, false);
 
-        Button account = (Button) _view.findViewById(R.id.addAccount);
-        account.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addAccount();
-            }
-        });
-
         Button record = (Button) _view.findViewById(R.id.addRecord);
         record.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,10 +63,7 @@ public class Content extends Fragment {
 
         return _view;
     }
-    public void addAccount() {
-        Intent intent = new Intent(getActivity(), AddAccount.class);
-        startActivity(intent);
-    }
+
     public void addRecord() {
         Intent intent = new Intent(getActivity(), AddRecord.class);
         startActivity(intent);

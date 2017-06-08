@@ -18,7 +18,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="20sp"
         android:layout_marginBottom="10dp"
-        android:text="Choose record"/>
+        android:text="Add new record"/>
 
     <Button
         android:id="@+id/income"

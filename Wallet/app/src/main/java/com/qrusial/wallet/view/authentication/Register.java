@@ -21,11 +21,9 @@ import com.qrusial.wallet.view.activity.Authentication;
 public class Register extends Fragment {
 
     private Button login;
-    private TextInputLayout register_name;
     private TextInputLayout register_email;
     private TextInputLayout register_password;
     private TextInputLayout register_repassword;
-    private EditText et_name;
     private EditText et_email;
     private EditText et_password;
     private EditText et_repassword;
@@ -98,7 +96,6 @@ public class Register extends Fragment {
                     _isvalid = false;
                     register_repassword.setErrorEnabled(true);
                     register_repassword.setError("Password not match");
-
                 }
 
                 if (_isvalid) {

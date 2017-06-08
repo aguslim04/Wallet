@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/tesas"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -18,17 +18,8 @@
         <activity android:name=".view.activity.Authentication" />
 
         <activity
-            android:name=".view.menu.AddAccount"
-            android:label="Make your account"
-            android:parentActivityName=".view.activity.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.activity.MainActivity" />
-        </activity>
-
-        <activity
             android:name=".view.menu.AddRecord"
-            android:label="Wallet"
+            android:label="Make Record"
             android:parentActivityName=".view.activity.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -79,6 +70,24 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.menu.AddRecord" />
+        </activity>
+
+        <activity
+            android:name=".view.menu.RecordIncome"
+            android:label="Income Record"
+            android:parentActivityName=".view.menu.Record">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.menu.Record" />
+        </activity>
+
+        <activity
+            android:name=".view.menu.RecordExpense"
+            android:label="Expense Record"
+            android:parentActivityName=".view.menu.Record">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".view.menu.Record" />
         </activity>
 
         <activity android:name=".view.activity.SplashActivity"><intent-filter>
