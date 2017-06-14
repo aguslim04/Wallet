@@ -6,6 +6,7 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="confirm">Re-Password</string>
+    <string name="yourWallet">Your Wallet</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="add_account">Add Account</string>
@@ -15,6 +16,8 @@
     <string name="chart">Chart</string>
     <string name="categories">Categories</string>
     <string name="title_activity_add_record">Add Record</string>
+    <string name="income">Income</string>
+    <string name="expense">Expense</string>
     <string name="total">Your Money</string>
     <string name="submit">Submit</string>
     <string name="action_settings">Settings</string>

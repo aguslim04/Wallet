@@ -1,49 +1,59 @@
 package com.qrusial.wallet.view.menu;
 
 /**
- * Created by Agus Manto on 10/04/2017.
+ * Created by Ferik Enedy Wijayaon 1/06/2017.
  */
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.qrusial.wallet.R;
 
-public class Tab1Income extends AppCompatActivity {
+import java.util.ArrayList;
 
-    String var_income, spinner_income;
+public class Tab1Income extends AppCompatActivity {
+    Button bt;
+    EditText et;
+    Spinner si;
+    ListView show;
+    ArrayList<String> addArray = new ArrayList<String>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tab1income);
 
-        final EditText incomeText = (EditText) findViewById(R.id.incomeValue);
-        final Spinner incomeSpinner = (Spinner) findViewById(R.id.spinnerIncome);
-        Button incomeButton = (Button) findViewById(R.id.submitIncome);
+        et = (EditText) findViewById(R.id.incomeValue);
+        si = (Spinner) findViewById(R.id.spinnerIncome);
+        show = (ListView)findViewById(R.id.incomeList);
+        bt = (Button) findViewById(R.id.submitIncome);
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String getItem = si.getSelectedItem().toString();
+                String getInput = et.getText().toString();
 
-        incomeButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-
-                var_income = incomeText.getText().toString();
-                spinner_income = incomeSpinner.getSelectedItem().toString();
-                Intent i = null;
-                i = new Intent(Tab1Income.this, RecordIncome.class);
-
-                Bundle b = new Bundle();
-                b.putString("parse_value", var_income);
-                b.putString("parse_item", spinner_income);
-                i.putExtras(b);
-                startActivity(i);
-
-                Toast.makeText(Tab1Income.this, "Submitted!!!", Toast.LENGTH_SHORT).show();
+                if(getInput==null||getInput.trim().equals("")){
+                    Toast.makeText(getBaseContext(),"Value is required !!!", Toast.LENGTH_LONG).show();
+                }
+                else{
+                    addArray.add(getItem + " = IDR. " + getInput);
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(Tab1Income.this, android.R.layout.simple_list_item_1, addArray);
+                    Toast.makeText(getBaseContext(),"Submitted!!!", Toast.LENGTH_LONG).show();
+                    show.setAdapter(adapter);
+                    ((EditText)findViewById(R.id.incomeValue)).setText("");
+                }
             }
         });
+
+
     }
 }

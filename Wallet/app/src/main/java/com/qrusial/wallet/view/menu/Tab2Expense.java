@@ -4,46 +4,57 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.qrusial.wallet.R;
 
+import java.util.ArrayList;
+
 /**
- * Created by Agus Manto on 10/04/2017.
+ * Created by Agus Manto on 20/5/2017.
  */
 
 public class Tab2Expense extends AppCompatActivity {
 
-    String var_expense, spinner_expense;
+    Button button;
+    EditText editText;
+    Spinner spinner;
+    ListView listView;
+    ArrayList<String> arrayList = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tab2expense);
 
-        final EditText expenseText = (EditText) findViewById(R.id.expenseValue);
-        final Spinner expenseSpinner = (Spinner) findViewById(R.id.spinnerExpense);
-        Button expenseButton = (Button) findViewById(R.id.submitExpense);
+        editText = (EditText) findViewById(R.id.expenseValue);
+        spinner = (Spinner) findViewById(R.id.spinnerExpense);
+        listView = (ListView)findViewById(R.id.expenseList);
+        button = (Button) findViewById(R.id.submitExpense);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String getItem = spinner.getSelectedItem().toString();
+                String getInput = editText.getText().toString();
 
-        expenseButton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-
-                var_expense = expenseText.getText().toString();
-                spinner_expense = expenseSpinner.getSelectedItem().toString();
-                Intent i = null;
-                i = new Intent(Tab2Expense.this, RecordIncome.class);
-
-                Bundle b = new Bundle();
-                b.putString("parse_value", var_expense);
-                b.putString("parse_item", spinner_expense);
-                i.putExtras(b);
-                startActivity(i);
-                Toast.makeText(Tab2Expense.this, "Submitted!!!", Toast.LENGTH_SHORT).show();
+                if(getInput==null||getInput.trim().equals("")){
+                    Toast.makeText(getBaseContext(),"Value is required !!!", Toast.LENGTH_LONG).show();
+                }
+                else{
+                    arrayList.add(getItem + " = IDR. " +getInput);
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(Tab2Expense.this, android.R.layout.simple_list_item_1, arrayList);
+                    Toast.makeText(getBaseContext(),"Submitted!!!", Toast.LENGTH_LONG).show();
+                    listView.setAdapter(adapter);
+                    ((EditText)findViewById(R.id.expenseValue)).setText("");
+                }
             }
         });
+
     }
 }

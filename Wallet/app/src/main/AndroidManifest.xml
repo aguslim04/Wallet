@@ -16,7 +16,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.activity.Authentication" />
-
         <activity
             android:name=".view.menu.AddRecord"
             android:label="Make Record"
@@ -25,8 +24,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.activity.MainActivity" />
         </activity>
-
-
         <activity
             android:name=".view.menu.Dashboard"
             android:label="Dashboard"
@@ -35,16 +32,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.activity.MainActivity" />
         </activity>
-
         <activity
             android:name=".view.menu.Record"
-            android:label="Your Record"
+            android:label="Record"
             android:parentActivityName=".view.activity.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.activity.MainActivity" />
         </activity>
-
         <activity
             android:name=".view.menu.Chart"
             android:label="Chart"
@@ -53,7 +48,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.activity.MainActivity" />
         </activity>
-
         <activity
             android:name=".view.menu.Tab1Income"
             android:label="Income"
@@ -62,7 +56,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.menu.AddRecord" />
         </activity>
-
         <activity
             android:name=".view.menu.Tab2Expense"
             android:label="Expense"
@@ -71,30 +64,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".view.menu.AddRecord" />
         </activity>
+        <activity android:name=".view.activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <activity
-            android:name=".view.menu.RecordIncome"
-            android:label="Income Record"
-            android:parentActivityName=".view.menu.Record">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.menu.Record" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
-        <activity
-            android:name=".view.menu.RecordExpense"
-            android:label="Expense Record"
-            android:parentActivityName=".view.menu.Record">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.menu.Record" />
-        </activity>
-
-        <activity android:name=".view.activity.SplashActivity"><intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
     </application>
 
 </manifest>

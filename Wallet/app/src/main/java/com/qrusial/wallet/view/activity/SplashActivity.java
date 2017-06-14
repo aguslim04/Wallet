@@ -1,5 +1,9 @@
 package com.qrusial.wallet.view.activity;
 
+/**
+ * Created by Angsono Putra on 21/03/2017.
+ */
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

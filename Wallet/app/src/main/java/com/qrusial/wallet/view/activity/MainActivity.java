@@ -21,9 +21,9 @@ public class MainActivity extends Parent {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        User a = new User("agus@mobile.id", "agus");
-        User b = new User("angsono@mobile.id", "angsono");
-        User c = new User("ferik@mobile.id", "ferik");
+        User a = new User("agus@mobile.id", "agus", 5000000);
+        User b = new User("angsono@mobile.id", "angsono", 5000000);
+        User c = new User("ferik@mobile.id", "ferik", 5000000);
         User.users.add(a);
         User.users.add(b);
         User.users.add(c);

@@ -24,10 +24,13 @@ public class Register extends Fragment {
     private TextInputLayout register_email;
     private TextInputLayout register_password;
     private TextInputLayout register_repassword;
+    private TextInputLayout register_wallet;
     private EditText et_email;
     private EditText et_password;
     private EditText et_repassword;
+    private EditText et_wallet;
     private Button btn_register;
+
 
     public Register() {
         // Required empty public constructor
@@ -50,10 +53,12 @@ public class Register extends Fragment {
         register_email = (TextInputLayout) view.findViewById(R.id.register_email_container);
         register_password = (TextInputLayout) view.findViewById(R.id.register_password_container);
         register_repassword = (TextInputLayout) view.findViewById(R.id.register_repassword_container);
+        register_wallet = (TextInputLayout) view.findViewById(R.id.register_wallet_container);
         btn_register = (Button) view.findViewById(R.id.register_register);
         et_email = (EditText) view.findViewById(R.id.register_email);
         et_password = (EditText) view.findViewById(R.id.register_password);
         et_repassword = (EditText) view.findViewById(R.id.register_repassword);
+        et_wallet = (EditText)view.findViewById(R.id.register_wallet);
     }
 
     private void event() {
@@ -96,10 +101,17 @@ public class Register extends Fragment {
                     _isvalid = false;
                     register_repassword.setErrorEnabled(true);
                     register_repassword.setError("Password not match");
+                } else if (TextUtils.isEmpty(et_wallet.getText())) {
+                    _isvalid = false;
+                    register_wallet.setErrorEnabled(true);
+                    register_wallet.setError("Your Wallet is required");
+                } else if (!et_wallet.getText().toString().equals(et_wallet.getText().toString())){
+                    register_wallet.setErrorEnabled(true);
+                    register_wallet.setError("Password not match");
                 }
 
                 if (_isvalid) {
-                    User userNew = new User(et_email.getText().toString(), et_password.getText().toString());
+                    User userNew = new User(et_email.getText().toString(), et_password.getText().toString(), et_wallet.getText().length());
                     User.users.add(userNew);
                     ((Authentication) getActivity()).changefragment(new Login());
                 }

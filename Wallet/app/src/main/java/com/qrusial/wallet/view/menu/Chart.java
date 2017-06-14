@@ -1,7 +1,7 @@
 package com.qrusial.wallet.view.menu;
 
 /**
- * Created by Agus Manto on 21/03/2017.
+ * Created by Angsono Putra on 21/03/2017.
  */
 
 import android.os.Bundle;

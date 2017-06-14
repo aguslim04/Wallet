@@ -38,7 +38,6 @@ public class Account {
         this.account = account;
     }
 
-
     public String getValue() {
         return value;
     }

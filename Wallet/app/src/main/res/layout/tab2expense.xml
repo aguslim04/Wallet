@@ -80,7 +80,13 @@
         android:layout_gravity="center"
         android:textAlignment="center"
         android:background="@color/colorGray"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:text="@string/submit"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/expenseList"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>
