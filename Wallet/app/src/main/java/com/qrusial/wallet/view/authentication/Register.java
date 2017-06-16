@@ -101,17 +101,10 @@ public class Register extends Fragment {
                     _isvalid = false;
                     register_repassword.setErrorEnabled(true);
                     register_repassword.setError("Password not match");
-                } else if (TextUtils.isEmpty(et_wallet.getText())) {
-                    _isvalid = false;
-                    register_wallet.setErrorEnabled(true);
-                    register_wallet.setError("Your Wallet is required");
-                } else if (!et_wallet.getText().toString().equals(et_wallet.getText().toString())){
-                    register_wallet.setErrorEnabled(true);
-                    register_wallet.setError("Password not match");
                 }
 
                 if (_isvalid) {
-                    User userNew = new User(et_email.getText().toString(), et_password.getText().toString(), et_wallet.getText().length());
+                    User userNew = new User(et_email.getText().toString(), et_password.getText().toString());
                     User.users.add(userNew);
                     ((Authentication) getActivity()).changefragment(new Login());
                 }

@@ -7,12 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".view.fragment.IncomeFragment">
 
-    <android.support.v7.widget.RecyclerView
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp"
-        android:id="@+id/income.recyclerview">
+        android:id="@+id/incomeList">
 
-    </android.support.v7.widget.RecyclerView>
+    </ListView>
 
 </LinearLayout>

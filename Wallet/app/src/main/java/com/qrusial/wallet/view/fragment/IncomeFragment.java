@@ -2,27 +2,22 @@ package com.qrusial.wallet.view.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.qrusial.wallet.R;
 import com.qrusial.wallet.model.entity.IncomeHistory;
-import com.qrusial.wallet.model.entity.User;
-import com.qrusial.wallet.view.adapter.IncomeHistoryAdapter;
-
-import java.util.ArrayList;
 
 /**
- * Created by USER on 12/06/2017.
+ * Created by Agus Manto on 12/06/2017.
  */
 
 public class IncomeFragment extends Fragment {
-    private RecyclerView recyclerView;
-    private IncomeHistoryAdapter adapter;
-    private ArrayList<IncomeHistory> histories;
+
+    ListView showIncome;
 
     public IncomeFragment(){
 
@@ -32,14 +27,14 @@ public class IncomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View _view = inflater.inflate(R.layout.fragment_income, container,false);
+        showListIncome(_view);
 
-        histories = User.loggedInUser.getIncomeHistory();
-        adapter = new IncomeHistoryAdapter();
-        recyclerView = (RecyclerView) _view.findViewById(R.id.income_recyclerview);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter.setIncomeHistories(histories);
-        recyclerView.setAdapter(adapter);
         return _view;
+    }
+
+    public void showListIncome(View view){
+        showIncome = (ListView) view.findViewById(R.id.incomeList);
+        ArrayAdapter<String> adapter = new  ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, IncomeHistory.arrayRecordIncome);
+        showIncome.setAdapter(adapter);
     }
 }

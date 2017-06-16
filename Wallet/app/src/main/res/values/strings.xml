@@ -35,4 +35,5 @@
         <item>Vehicle</item>
         <item>Investments</item>
     </string-array>
+    <string name="title_activity_record">activity_record</string>
 </resources>
